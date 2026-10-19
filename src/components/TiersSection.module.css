@@ -1,0 +1,178 @@
+.comparison {
+  display: grid;
+  grid-template-columns: 1fr 1.15fr;
+  gap: 2rem;
+  max-width: 960px;
+  margin: 0 auto;
+  align-items: center;
+}
+
+.standardCard, .founderCard {
+  background: var(--color-card-bg);
+  border: 1px solid var(--color-card-border);
+  border-radius: var(--radius-lg);
+  padding: 3rem 2.5rem;
+  box-shadow: var(--shadow-sm);
+  position: relative;
+}
+
+.founderCard {
+  background: var(--color-white);
+  border: 2px solid var(--color-terracotta);
+  box-shadow: var(--shadow-hero);
+  transform: scale(1.03);
+}
+
+.featuredBadge {
+  position: absolute;
+  top: -14px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--color-terracotta);
+  color: var(--color-white);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  padding: 0.35rem 1.25rem;
+  border-radius: var(--radius-full);
+  box-shadow: 0 4px 12px rgba(186, 104, 73, 0.3);
+  white-space: nowrap;
+}
+
+.eyebrow {
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  color: var(--color-text-muted);
+  display: block;
+  margin-bottom: 0.35rem;
+}
+
+.founderEyebrow {
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  color: var(--color-terracotta);
+  display: block;
+  margin-bottom: 0.35rem;
+}
+
+.tierTitle {
+  font-family: var(--font-serif);
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.desc {
+  font-size: 0.9rem;
+  color: var(--color-text-secondary);
+  margin-bottom: 2rem;
+}
+
+.features {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding-bottom: 2.25rem;
+  border-bottom: 1px solid var(--color-card-border);
+  margin-bottom: 2rem;
+}
+
+.features li {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.92rem;
+  color: var(--color-text-primary);
+}
+
+.disabled {
+  color: var(--color-text-muted) !important;
+  text-decoration: line-through;
+  opacity: 0.6;
+}
+
+.check {
+  color: var(--color-sage);
+  font-weight: 700;
+}
+
+.cross {
+  color: var(--color-text-muted);
+  font-weight: 700;
+}
+
+.status {
+  display: block;
+  text-align: center;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--color-text-muted);
+  padding: 0.75rem;
+}
+
+.fineprint {
+  display: block;
+  text-align: center;
+  font-size: 0.76rem;
+  color: var(--color-text-muted);
+  margin-top: 0.75rem;
+}
+
+@media (max-width: 1024px) {
+  .comparison {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .founderCard {
+    transform: none;
+    order: -1; /* Feature the VIP Founding Circle card first on mobile & tablets */
+  }
+}
+
+@media (max-width: 640px) {
+  .standardCard, .founderCard {
+    padding: 2.25rem 1.25rem 1.75rem;
+    border-radius: var(--radius-md);
+  }
+
+  .featuredBadge {
+    font-size: 0.68rem;
+    padding: 0.3rem 0.75rem;
+    white-space: normal;
+    text-align: center;
+    width: max-content;
+    max-width: 90%;
+  }
+
+  .tierTitle {
+    font-size: 1.65rem;
+  }
+
+  .features {
+    gap: 0.85rem;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1.75rem;
+  }
+
+  .features li {
+    font-size: 0.86rem;
+  }
+}
+
+@media (max-width: 360px) {
+  .standardCard, .founderCard {
+    padding: 2rem 0.95rem 1.5rem;
+  }
+
+  .tierTitle {
+    font-size: 1.45rem;
+  }
+
+  .features li {
+    font-size: 0.82rem;
+  }
+}

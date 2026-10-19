@@ -1,0 +1,297 @@
+.headerSplit {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 2rem;
+  margin-bottom: 2.75rem;
+  flex-wrap: wrap;
+}
+
+.tabs {
+  display: flex;
+  gap: 0.5rem;
+  background: var(--color-canvas-subtle);
+  border: 1px solid var(--color-card-border);
+  padding: 0.35rem;
+  border-radius: var(--radius-full);
+  flex-wrap: wrap;
+}
+
+.tabBtn {
+  background: transparent;
+  border: none;
+  padding: 0.65rem 1.25rem;
+  border-radius: var(--radius-full);
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--color-text-secondary);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.tabActive {
+  background: var(--color-umber);
+  color: var(--color-white);
+  box-shadow: var(--shadow-sm);
+}
+
+.card {
+  background: var(--color-card-bg);
+  border: 1px solid var(--color-card-border);
+  border-radius: var(--radius-lg);
+  padding: 3rem;
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 3.5rem;
+  box-shadow: var(--shadow-md);
+  align-items: center;
+}
+
+.badge {
+  display: inline-block;
+  background: var(--color-terracotta-light);
+  color: var(--color-terracotta);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  padding: 0.35rem 0.85rem;
+  border-radius: var(--radius-full);
+  margin-bottom: 1rem;
+}
+
+.title {
+  font-family: var(--font-serif);
+  font-size: 2.4rem;
+  font-weight: 500;
+  margin-bottom: 1rem;
+  color: var(--color-text-primary);
+}
+
+.desc {
+  font-size: 1.05rem;
+  color: var(--color-text-secondary);
+  line-height: 1.7;
+  margin-bottom: 2rem;
+}
+
+.specsGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.25rem;
+  padding: 1.5rem 0;
+  border-top: 1px solid var(--color-card-border);
+  border-bottom: 1px solid var(--color-card-border);
+  margin-bottom: 2rem;
+}
+
+.specItem {
+  display: flex;
+  flex-direction: column;
+}
+
+.specLabel {
+  font-size: 0.76rem;
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 0.25rem;
+}
+
+.specValue {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--color-text-primary);
+}
+
+.swatchPicker {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  flex-wrap: wrap;
+}
+
+.swatchLabel {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--color-text-secondary);
+}
+
+.dotsRow {
+  display: flex;
+  gap: 0.65rem;
+}
+
+.colorDot {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 2px solid var(--color-white);
+  box-shadow: 0 0 0 1px var(--color-card-border);
+  cursor: pointer;
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+  touch-action: manipulation;
+}
+
+.colorDot:hover {
+  transform: scale(1.15);
+}
+
+.dotActive {
+  box-shadow: 0 0 0 2.5px var(--color-umber);
+  transform: scale(1.15);
+}
+
+.selectedName {
+  font-size: 0.85rem;
+  color: var(--color-text-secondary);
+}
+
+.macroBox {
+  background: var(--color-canvas-subtle);
+  border: 1px solid var(--color-card-border);
+  border-radius: var(--radius-md);
+  padding: 1.5rem;
+  box-shadow: var(--shadow-sm);
+}
+
+.macroBadge {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.macroTexture {
+  height: 240px;
+  border-radius: var(--radius-sm);
+  background-image: 
+    repeating-linear-gradient(0deg, rgba(43, 38, 35, 0.05), rgba(43, 38, 35, 0.05) 1px, transparent 1px, transparent 4px),
+    repeating-linear-gradient(90deg, rgba(43, 38, 35, 0.05), rgba(43, 38, 35, 0.05) 1px, transparent 1px, transparent 4px);
+  transition: background-color var(--transition-smooth);
+  box-shadow: inset 0 2px 8px rgba(0,0,0,0.06);
+}
+
+.macroFooter {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 1.25rem;
+  font-size: 0.85rem;
+  color: var(--color-text-secondary);
+}
+
+.macroLink {
+  font-weight: 600;
+  color: var(--color-terracotta);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+@media (max-width: 1024px) {
+  .card {
+    grid-template-columns: 1fr;
+    padding: 2.25rem;
+    gap: 2.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .headerSplit {
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+  }
+
+  .tabs {
+    width: 100%;
+    overflow-x: auto;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    border-radius: var(--radius-md);
+    padding: 0.35rem;
+    flex-wrap: nowrap;
+    scroll-snap-type: x proximity;
+  }
+
+  .tabs::-webkit-scrollbar {
+    display: none;
+  }
+
+  .tabBtn {
+    flex-shrink: 0;
+    padding: 0.55rem 0.95rem;
+    font-size: 0.82rem;
+    scroll-snap-align: start;
+    min-height: 40px;
+  }
+
+  .card {
+    padding: 1.65rem 1.25rem;
+    border-radius: var(--radius-md);
+    gap: 2rem;
+  }
+
+  .title {
+    font-size: 1.85rem;
+  }
+
+  .specsGrid {
+    grid-template-columns: 1fr;
+    gap: 0.85rem;
+  }
+
+  .macroTexture {
+    height: 180px;
+  }
+}
+
+@media (max-width: 480px) {
+  .title {
+    font-size: 1.6rem;
+  }
+
+  .swatchPicker {
+    gap: 0.75rem;
+  }
+
+  .dotsRow {
+    gap: 0.6rem;
+  }
+
+  .colorDot {
+    width: 28px;
+    height: 28px;
+  }
+
+  .macroFooter {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.65rem;
+  }
+
+  .macroLink {
+    min-height: 36px;
+  }
+}
+
+@media (max-width: 360px) {
+  .card {
+    padding: 1.35rem 0.95rem;
+  }
+
+  .title {
+    font-size: 1.4rem;
+  }
+
+  .tabBtn {
+    padding: 0.5rem 0.75rem;
+    font-size: 0.78rem;
+  }
+
+  .macroTexture {
+    height: 150px;
+  }
+}
